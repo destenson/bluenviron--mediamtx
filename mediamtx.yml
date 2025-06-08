@@ -729,6 +729,14 @@ paths:
     # Enable stream recording
     record: yes
 
+    # Container format selection
+    recordFormat: fmp4  # Alternatives: fmp4 for fragmented MP4
+
+    # Segment management parameters
+    recordPartDuration: 300ms
+    recordSegmentDuration: 5s
+    recordDeleteAfter: 10m  # 7-day retention
+
   teststream:
     runOnDemand: >
       gst-launch-1.0 videotestsrc is-live=true ! 
