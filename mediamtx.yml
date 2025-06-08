@@ -485,7 +485,7 @@ pathDefaults:
   # Therefore, the part duration is equal to the RPO (recovery point objective).
   recordPartDuration: 1s
   # Minimum duration of each segment.
-  recordSegmentDuration: 1h
+  recordSegmentDuration: 30s
   # Delete segments after this timespan.
   # Set to 0s to disable automatic deletion.
   recordDeleteAfter: 1d
