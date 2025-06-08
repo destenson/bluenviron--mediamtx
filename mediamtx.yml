@@ -743,6 +743,8 @@ paths:
       video/x-raw,width=1280,height=720,framerate=30000/1001 ! 
       x264enc tune=zerolatency bitrate=2000 key-int-max=30 ! 
       rtspclientsink location=rtsp://localhost:8554/teststream
+#      rtph264pay config-interval=1 pt=96 !
+#      rtponviftimestamp !
     runOnDemandRestart: no
     runOnDemandStartTimeout: 15s
     runOnDemandCloseAfter: 8s
