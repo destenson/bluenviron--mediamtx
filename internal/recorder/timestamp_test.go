@@ -7,11 +7,6 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-// Helper function for timestamp tests - allows the other tests to compile
-func timestampToDuration(ts int64, timeScale int) time.Duration {
-	return time.Duration(ts) * time.Second / time.Duration(timeScale)
-}
-
 func TestTimestampToDuration(t *testing.T) {
 	testCases := []struct {
 		name      string
@@ -38,6 +33,12 @@ func TestTimestampToDuration(t *testing.T) {
 			expected:  time.Second,
 		},
 		{
+			name:      "44.1kHz_timescale",
+			timestamp: 44100,
+			timeScale: 44100,
+			expected:  time.Second,
+		},
+		{
 			name:      "zero",
 			timestamp: 0,
 			timeScale: 90000,
@@ -51,16 +52,4 @@ func TestTimestampToDuration(t *testing.T) {
 			require.Equal(t, tc.expected, result)
 		})
 	}
-}
-
-func TestMultiplyAndDivide(t *testing.T) {
-	// This function is often used for timestamp scaling operations
-	// Adding a stub implementation for tests
-	result := multiplyAndDivide(90000, 48000, 90000)
-	require.Equal(t, int64(48000), result)
-}
-
-// Stub implementation for testing
-func multiplyAndDivide(a, b, c int64) int64 {
-	return a * b / c
 }
