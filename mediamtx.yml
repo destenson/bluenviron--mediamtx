@@ -744,7 +744,7 @@ paths:
       x264enc tune=zerolatency bitrate=2000 key-int-max=30 ! 
       rtspclientsink location=rtsp://localhost:8554/teststream
     runOnDemandRestart: no
-    runOnDemandStartTimeout: 5s
+    runOnDemandStartTimeout: 15s
     runOnDemandCloseAfter: 8s
 
   # Settings under path "all_others" are applied to all paths that
